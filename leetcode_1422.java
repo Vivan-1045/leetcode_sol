@@ -5,20 +5,22 @@ public class leetcode_1422 {
     }
     public static int Maximum(String st) {
        int ans = 0;
-       for (int i =0;i<st.length()-1;i++){
-           int curr = 0;
-           for (int j = 0;j<i+1;j++){
-               if (st.charAt(j)=='0'){
-                   curr++;
-               }
+       int ones = 0;
+       int zeros = 0;
+
+       for (int i =0;i<st.length();i++) {
+           if (st.charAt(i)=='1'){
+               ones++;
            }
-           for (int j = i+1;j<st.length();j++){
-               if (st.charAt(j)=='1'){
-                   curr++;
-               }
-           }
-           ans = Math.max(ans, curr);
        }
-        return ans;
+       for (int i =0;i<st.length()-1;i++){
+           if (st.charAt(i)=='0'){
+               zeros++;
+           }else{
+               ones--;
+           }
+           ans = Math.max(ans, ones+zeros);
+       }
+       return ans;
     }
 }
