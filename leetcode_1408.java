@@ -11,11 +11,12 @@ public class leetcode_1408 {
         List<String> list = new ArrayList<>();
         for (int a=0;a<st.length;a++){
             for (int i = 0;i<st.length;i++){
-                if (a!=i && st[i].indexOf(st[a])!=-1){
+                if (a!=i && st[i].contains(st[a])){
                         list.add(st[a]);
                         break;
                 }
             }
+
         }
         return list;
     }

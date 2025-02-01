@@ -3,7 +3,7 @@ import java.util.List;
 
 public class leetcode_78 {
     public static void main(String[] args) {
-        int[] arr = {1,2};
+        int[] arr = {2,3,6,7};
         System.out.println(AllSubsets(arr));
     }
     public static List<List<Integer>> AllSubsets(int[] arr){
