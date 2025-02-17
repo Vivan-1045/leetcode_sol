@@ -39,10 +39,14 @@ public class leetcode_1718 {
 
             //Explore further
 
+            //If number is exactly 1 then store it at the current idx no need to find jth idx
+            //And move further
             if (num==1){
                 if (checkIdx(res,used,i+1,n)){
                     return true;
                 }
+            //otherwise find jth idx and store that number at jth idx
+            //And move further
             }else {
                 int j = i+ res[i];
                 if (j<res.length&& res[j]==-1){
