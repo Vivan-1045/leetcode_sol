@@ -5,7 +5,7 @@ public class leetcode_5 {
         String s = "cbbd";
         System.out.println(longestPalindromic(s));
     }
-
+    
     public static String longestPalindromic(String s) {
         if (s==null || s.length()==0) return "";
         int st = 0;
