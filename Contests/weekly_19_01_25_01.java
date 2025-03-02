@@ -1,3 +1,5 @@
+package Contests;
+
 public class weekly_19_01_25_01 {
     public static void main(String[] args) {
       int[] arr = {3,1,1,2};

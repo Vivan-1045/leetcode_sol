@@ -1,3 +1,5 @@
+package Contests;
+
 public class biweekly {
     public static void main(String[] args) {
         String s = "tokk";

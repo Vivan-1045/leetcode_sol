@@ -1,3 +1,5 @@
+package Contests;
+
 import java.util.HashMap;
 
 public class weekly02 {

@@ -1,3 +1,5 @@
+package Contests;
+
 import java.util.Arrays;
 
 public class biweekly_01 {

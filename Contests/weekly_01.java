@@ -1,3 +1,5 @@
+package Contests;
+
 import java.util.Arrays;
 
 public class weekly_01 {

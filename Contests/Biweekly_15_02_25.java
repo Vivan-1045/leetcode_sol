@@ -1,4 +1,4 @@
-
+package Contests;
 
 public class Biweekly_15_02_25 {
     public static void main(String[] args) {
