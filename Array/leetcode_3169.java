@@ -25,6 +25,7 @@ public class leetcode_3169 {
             int meetStart = meetings[i][0];
             int meetEnd = meetings[i][1];
 
+            //if the arrays interval are overlapped
             if (temp[1]>= meetStart){
                 temp[1] = Math.max(temp[1],meetEnd);
             }else{
