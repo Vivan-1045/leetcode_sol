@@ -2,8 +2,8 @@ package Array;
 
 public class leetcode_2873 {
     public static void main(String[] args) {
-        int[] arr = {1,2,3};
-        System.out.println(maxVal(arr));
+        int[] arr = {12,6,1,2,7};
+        System.out.println(optimal(arr));
     }
     public static long maxVal(int[] arr){
         int n = arr.length;
@@ -18,6 +18,23 @@ public class leetcode_2873 {
                     ans = Math.max(ans, (long) (arr[i] - arr[j]) *arr[k]);
                 }
             }
+        }
+        return ans;
+    }
+
+
+    //arr = {2,3,1};
+    public static long optimal(int[] arr){
+        int maxDiff = 0;
+        int max = 0;
+        int n = arr.length;
+        long ans =0;
+
+        for (int i = 0;i<n;i++){
+          ans = Math.max(ans,(long)maxDiff*arr[i]);
+          maxDiff = Math.max(maxDiff,max-arr[i]);
+          max = Math.max(arr[i],max);
+
         }
         return ans;
     }
