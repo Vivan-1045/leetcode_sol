@@ -1,6 +1,13 @@
 package LinkedList;
 
 public class leetcode_234 {
+    class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
     public boolean isPalindrome(ListNode head) {
         ListNode mid = getMid(head);
         ListNode secondHead = reverseList(mid);

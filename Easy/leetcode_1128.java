@@ -1,8 +1,7 @@
 package Easy;
-
 public class leetcode_1128 {
     public static void main(String[] args) {
-        int [][] arr = {{1,2}};
+        int [][] arr = {{1,2},{2,1},{3,4},{5,6},{1,2}};
         System.out.println(equalPair(arr));
     }
     public static int equalPair(int[][] arr){

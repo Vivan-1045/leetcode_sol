@@ -12,11 +12,14 @@ public class leetcode_1922 {
         long power2 = power(4,n/2,MOD);
 
 
-
         if (n%2 !=0){
             power1 = (5*power1)%MOD;
 
         }
+
+        //if n is even ans = 5^(n/2)*4^(n/2)
+        //if n is odd ans = 5^(n/2+1)*4^(n/2)
+
         ans =  (power1 * power2)%MOD;
         return (int) ans;
     }
