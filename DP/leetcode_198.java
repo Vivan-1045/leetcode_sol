@@ -21,10 +21,10 @@ public class leetcode_198 {
             return dp[i];
         }
 
-        int add = num[i] + solve(num,i+2);
-        int skip = solve(num,i+1);
+        int moneyAdded = num[i] + solve(num,i+2);
+        int skippedMoney = solve(num,i+1);
 
         //otherwise store the result in dp[i]
-        return dp[i]= Math.max(add,skip);
+        return dp[i] = Math.max(moneyAdded,skippedMoney);
     }
 }
