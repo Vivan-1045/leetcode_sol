@@ -1,3 +1,5 @@
+package Array;
+
 public class leetcode_1346 {
     public static void main(String[] args){
         int []arr = {7,1,14,11};

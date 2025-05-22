@@ -1,3 +1,5 @@
+package String;
+
 public class leetcode_69 {
     public static void main(String[] args) {
         System.out.println(Sqrt(5));

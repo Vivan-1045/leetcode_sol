@@ -1,4 +1,4 @@
-package BinarySearch;
+package Binary_Search;
 
 public class leetcode_2594 {
     public static void main(String[] args) {
