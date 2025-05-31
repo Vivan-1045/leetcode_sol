@@ -26,4 +26,16 @@ public class leetcode_55 {
 
         return t[idx] = false;
     }
+
+    //Greedy
+    public static boolean canJumped(int [] arr){
+        int maxJump = 0;
+        for (int i = 0;i<arr.length;i++){
+            if (i>maxJump){
+                return false;
+            }
+            maxJump = Math.max(i+arr[i],maxJump);
+        }
+        return true;
+    }
 }
