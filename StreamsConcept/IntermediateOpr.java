@@ -1,5 +1,6 @@
 package StreamsConcept;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -40,5 +41,22 @@ public class IntermediateOpr {
         //6. skip()
         System.out.println(Stream.iterate(1,x->x+1).skip(10).limit(20).count());
 
+        //7. peek()
+        System.out.println(Stream.iterate(1,x->x+1).skip(10).limit(20).peek(System.out::println).count());
+
+        //8. flatMap()
+        //Handle streams of collections, list,or arrays where each element is itself a collection
+        //flatten nested structure like list inside another list
+        //Transform and flatten element at same time
+
+        List<List<String>> list = Arrays.asList(Arrays.asList("Jony","Rohit"),
+                Arrays.asList("Surya","Hardik"),
+                Arrays.asList("Naman","Tilak"),
+                Arrays.asList("Mitchel","Bumrah"),
+                Arrays.asList("Ashwani","Bawa")
+                );
+
+        System.out.println(list.get(1).get(0));
+        System.out.println(list.stream().flatMap(x->x.stream()).map(String::toUpperCase).toList());
     }
 }
