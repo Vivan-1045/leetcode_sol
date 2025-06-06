@@ -57,6 +57,34 @@ public class CollectorsDemo {
         //10. Mapping and collecting
         System.out.println(list3.stream().collect(Collectors.mapping(String::toUpperCase,Collectors.toList())));
 
+        //Example 1. Collecting names by length
+        List<String> list4 = Arrays.asList("Rahul", "Anju", "Naman", "Deepak");
+        System.out.println(list4.stream().collect(Collectors.groupingBy(String::length)));
+
+        //Example 2. Counting word occurrences
+        String st = "Hello java world";
+        System.out.println(Arrays.stream(st.split(" ")).collect(Collectors.groupingBy(x->x,Collectors.counting())));
+
+        //Example 3. Partition even and odd
+        List<Integer> list5 = Arrays.asList(1, 2, 3, 4, 5, 6);
+        System.out.println(list5.stream().collect(Collectors.partitioningBy(x->x%2==0)));
+
+        //Example 4. Summing values in map
+        Map<String,Integer> mp = new HashMap<>();
+        mp.put("Apple", 40);
+        mp.put("Mango",20);
+        mp.put("Banana",30);
+        System.out.println(mp.values().stream().reduce(Integer::sum).get());
+        System.out.println((Integer) mp.values().stream().mapToInt(x -> x).sum());
+
+        //Example 5. Creating a Map from Stream
+        List<String> list6 = Arrays.asList("Apple", "Mango", "Banana", "Cherry");
+        System.out.println(list6.stream().collect(Collectors.toMap(String::toUpperCase, String::length)));
+
+        //Example 6. word count
+        List<String> list7 = Arrays.asList("Java", "C++", "C", "C++", "Python", "Java");
+        System.out.println(list7.stream().collect(Collectors.groupingBy(String::toUpperCase,Collectors.counting())));
+        System.out.println(list7.stream().collect(Collectors.toMap(String::toUpperCase,V->1,(x,y)->x+y)));
     }
 
 }
