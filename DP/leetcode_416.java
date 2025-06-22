@@ -6,9 +6,11 @@ import java.util.Arrays;
 public class leetcode_416 {
     static int [][]dp = new int[201][200001];
     public static void main(String[] args) {
-       int [] arr = {1,2,3,5};
-        System.out.println(isPossible(arr));
+       int [] arr = {1,5,11,3,2};
+        System.out.println(partitionPossible(arr));
     }
+
+    //Using memoization
     public static boolean isPossible(int[] nums){
         ArrayList<Integer> list = new ArrayList<>();
         int Sum = 0;
@@ -54,5 +56,39 @@ public class leetcode_416 {
 
         dp[i][half] = (take||not_take)?1:0;
         return take || not_take;
+    }
+
+
+    //Using Top down
+    public static boolean partitionPossible(int[]arr){
+        int sum = 0;
+        for (int num : arr){
+            sum += num;
+        }
+        if (sum%2!=0){
+            return false;
+        }
+        return subSetSum(arr,sum/2);
+    }
+
+    public static boolean subSetSum(int[] arr, int sum){
+        int n = arr.length;
+        boolean[][]dp = new boolean[n+1][sum+1];
+
+        for (int i = 0;i<=n;i++){
+            dp[i][0] = true; // Sum 0 is always true
+        }
+
+        for (int i = 1;i<=n;i++){
+            for (int j = 0;j<=sum;j++){
+                if (arr[i-1]<=j){
+                    dp[i][j] = dp[i-1][j-arr[i-1]] || dp[i-1][j];
+                }else{
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+
+        return dp[n][sum];
     }
 }
