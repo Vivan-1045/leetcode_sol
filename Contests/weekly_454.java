@@ -67,42 +67,44 @@ public class weekly_454 {
         return count%MOD;
     }
 
-    public static int triplet(int[] arr){
+    public static int triplet(int[] arr) {
         int count = 0;
-        Map<Integer,Integer> RfreqMap = new HashMap<>();
-        Map<Integer,Integer> LfreqMap = new HashMap<>();
+        Map<Integer, Integer> RfreqMap = new HashMap<>();
+        Map<Integer, Integer> LfreqMap = new HashMap<>();
 
 
-        for (int i = 0;i<arr.length;i++){
-            RfreqMap.put(arr[i],RfreqMap.getOrDefault(arr[i],0)+1);
+        for (int i = 0; i < arr.length; i++) {
+            RfreqMap.put(arr[i], RfreqMap.getOrDefault(arr[i], 0) + 1);
         }
 
-        for (int j = 0;j<arr.length;j++){
+        for (int j = 0; j < arr.length; j++) {
             int val = arr[j];
             long target = 2L * val;
 
-            if (target > Integer.MAX_VALUE){
-                RfreqMap.put(val,RfreqMap.get(val)-1);
-                if (RfreqMap.get(val)==0){
+            if (target > Integer.MAX_VALUE) {
+                RfreqMap.put(val, RfreqMap.get(val) - 1);
+                if (RfreqMap.get(val) == 0) {
                     RfreqMap.remove(val);
                 }
-                LfreqMap.put(val,LfreqMap.getOrDefault(val,0)+1);
+                LfreqMap.put(val, LfreqMap.getOrDefault(val, 0) + 1);
                 continue;
             }
 
-            RfreqMap.put(val,RfreqMap.get(val)-1);
-            if (RfreqMap.get(val)==0){
+            RfreqMap.put(val, RfreqMap.get(val) - 1);
+            if (RfreqMap.get(val) == 0) {
                 RfreqMap.remove(val);
             }
 
-            int ca = RfreqMap.getOrDefault((int)target,0);
-            int cb = LfreqMap.getOrDefault((int)target,0);
+            int ca = RfreqMap.getOrDefault((int) target, 0);
+            int cb = LfreqMap.getOrDefault((int) target, 0);
             count = (int) ((count + (long) cb * ca) % MOD);
 
-            LfreqMap.put(val,LfreqMap.getOrDefault(val,0)+1);
+            LfreqMap.put(val, LfreqMap.getOrDefault(val, 0) + 1);
         }
         return count;
     }
 
-
+    public static int code(){
+        return 0;
+    }
 }
