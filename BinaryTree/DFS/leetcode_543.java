@@ -1,4 +1,4 @@
-package BinaryTree;
+package BinaryTree.DFS;
 
 public class leetcode_543 {
     class TreeNode {
