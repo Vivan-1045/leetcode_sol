@@ -1,12 +1,11 @@
-package BinaryTree;
-
+package BinaryTree.BFS;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class leetcode_199 {
 
+public class leetcode_102{
     class TreeNode {
         int val;
         TreeNode left;
@@ -20,33 +19,36 @@ public class leetcode_199 {
         }
     }
 
-    public List<Integer> rightSideView(TreeNode root) {
-        return rightView(root);
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        return level(root);
     }
-    List<Integer> rightView(TreeNode root){
-        List<Integer> ans = new ArrayList<>();
-        if(root==null){
+    List<List<Integer>> level(TreeNode root){
+        List<List<Integer>> ans = new ArrayList<>();
+        if(root== null){
             return ans;
         }
-        Queue<TreeNode> que = new LinkedList<>();
-        que.offer(root);
+        Queue<TreeNode> qu = new LinkedList<>();
+        qu.offer(root);
 
-        while(!que.isEmpty()){
-            int queSize = que.size();
+        while(!qu.isEmpty()){
+            int queSize = qu.size();
+            List<Integer> currVal = new ArrayList<>();
             for(int i = 0;i<queSize;i++){
-                TreeNode currNode = que.poll();
-                if(i==queSize-1){
-                    ans.add(currNode.val);
-                }
+
+                TreeNode currNode = qu.poll();
+                currVal.add(currNode.val);
+
                 if(currNode.left != null){
-                    que.offer(currNode.left);
+                    qu.offer(currNode.left);
                 }
+
                 if(currNode.right != null){
-                    que.offer(currNode.right);
+                    qu.offer(currNode.right);
                 }
             }
+            ans.add(currVal);
         }
-
         return ans;
     }
 }
