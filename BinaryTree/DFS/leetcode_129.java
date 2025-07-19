@@ -17,21 +17,21 @@ public class leetcode_129 {
 
     int sum = 0;
     public int sumNumbers(TreeNode root) {
-        sumAllNumbers(root,"");
+        sumAllNumbers(root,0);
         return sum;
     }
-    void sumAllNumbers(TreeNode root, String s){
+    void sumAllNumbers(TreeNode root, int s){
         if(root==null){
             return;
         }
         if(root.left==null&&root.right==null){
-            s += root.val;
-            sum += Integer.parseInt(s);
+            s = s*10 + root.val;
+            sum += s;
             return;
         }
 
-        sumAllNumbers(root.left,s+root.val);
-        sumAllNumbers(root.right,s+root.val);
+        sumAllNumbers(root.left,s*10+root.val);
+        sumAllNumbers(root.right,s*10+root.val);
 
     }
 }
