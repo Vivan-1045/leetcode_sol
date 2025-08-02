@@ -1,8 +1,6 @@
 package Two_Pointer;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class leetcode_567 {
     public static void main(String[] args) {

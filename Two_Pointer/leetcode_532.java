@@ -7,6 +7,10 @@ import java.util.Map;
 public class leetcode_532 {
     public static void main(String[] args) {
         int [] arr = {1,2,4,4,3,3,0,9,2,3};
+
+        String s = "ba";
+        StringBuilder sb = new StringBuilder(s);
+        System.out.println();
         System.out.println(allPair(arr,3));
     }
     public static int allPair(int[]arr, int k){

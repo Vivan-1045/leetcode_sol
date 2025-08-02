@@ -1,6 +1,5 @@
 package Two_Pointer;
 
-import java.util.Arrays;
 
 public class leetcode_443 {
     public static void main(String[] args) {
