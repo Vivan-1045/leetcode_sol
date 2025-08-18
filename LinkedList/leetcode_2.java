@@ -1,7 +1,14 @@
 package LinkedList;
 
 public class leetcode_2 {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val,ListNode next) { this.val = val; this.next = next; }
+    }
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         return addNumbers(l1,l2);
     }
     public static ListNode addNumbers(ListNode h1,ListNode h2){

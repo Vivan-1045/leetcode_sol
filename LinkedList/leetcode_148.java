@@ -1,17 +1,18 @@
 package LinkedList;
-class ListNode{
-    int val;
-    ListNode next;
-
-    ListNode(int x){
-        val = x;
-        next = null;
-    }
-
-    public ListNode() {
-    }
-}
 public class leetcode_148 {
+
+    public static class ListNode{
+        int val;
+        ListNode next;
+
+        ListNode(int x){
+            val = x;
+            next = null;
+        }
+
+        public ListNode() {
+        }
+    }
 
     //Using Merge sort
     public ListNode sortList(ListNode head) {
