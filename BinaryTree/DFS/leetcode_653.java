@@ -1,5 +1,6 @@
 package BinaryTree.DFS;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class leetcode_653 {
@@ -17,11 +18,15 @@ public class leetcode_653 {
         }
 
         public boolean findTarget(TreeNode root, int k) {
-            if(root==null){
-                return false;
-            }
-            inorder(root);
-            return twoSum(list,k);
+
+//            if(root==null){
+//                return false;
+//            }
+//            inorder(root);
+//            return twoSum(list,k);
+
+            HashSet<Integer> set = new HashSet<>();
+            return twoSum1(root,k,set);
         }
 
         List<Integer> list = new ArrayList<>();
@@ -45,6 +50,19 @@ public class leetcode_653 {
                 }
             }
             return false;
+        }
+
+        //Optimal
+        boolean twoSum1(TreeNode root, int k, HashSet<Integer> set){
+            if(root==null){
+                return false;
+            }
+
+            if(set.contains(k-root.val)){
+                return true;
+            }
+            set.add(root.val);
+            return twoSum1(root.left,k,set) || twoSum1(root.right,k,set);
         }
     }
 }
