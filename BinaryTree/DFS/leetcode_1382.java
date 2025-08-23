@@ -1,4 +1,4 @@
-package BinaryTree;
+package BinaryTree.DFS;
 
 import java.util.ArrayList;
 import java.util.List;
