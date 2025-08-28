@@ -47,11 +47,11 @@ public class leetcode_334 {
 
         int n = arr.length;
 
-        for (int ele : arr) {
-            if (ele <= a) {
-                a = ele;
-            } else if (ele <= b) {
-                b = ele;
+        for (int j : arr) {
+            if (j <= a) {
+                a = j;
+            } else if (j <= b) {
+                b = j;
             } else {
                 return true;
             }
