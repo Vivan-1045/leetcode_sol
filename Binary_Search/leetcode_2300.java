@@ -1,5 +1,7 @@
 package Binary_Search;
 
+import java.util.Arrays;
+
 public class leetcode_2300 {
     public int[] successfulPairs(int[] spells, int[] potions, long success) {
         return succcesFul(spells,potions,success);

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class leetcode_32 {
     public static void main(String[] args) {
-        String s = "()(()";
+        String s = "())((())))";
         System.out.println(maxLength(s));
     }
     public static int maxLength(String s){
