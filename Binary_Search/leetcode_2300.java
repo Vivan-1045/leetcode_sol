@@ -16,7 +16,6 @@ public class leetcode_2300 {
         for(int ele : sp){
             arr[i++] = totalPotion(pos,s,ele);
         }
-
         return arr;
     }
 
