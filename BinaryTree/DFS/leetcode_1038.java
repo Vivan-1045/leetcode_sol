@@ -3,22 +3,22 @@ package BinaryTree.DFS;
 public class leetcode_1038 {
     class TreeNode{
         int val;
-        leetcode_538.TreeNode left,right;
+        TreeNode left,right;
 
-        TreeNode(int val, leetcode_538.TreeNode l, leetcode_538.TreeNode r){
+        TreeNode(int val, TreeNode l, TreeNode r){
             this.val = val;
             this.left = l;
             this.right = r;
         }
     }
 
-    public leetcode_538.TreeNode convertBST(leetcode_538.TreeNode root) {
+    public TreeNode convertBST(TreeNode root) {
         solve(root);
         return root;
     }
     int sum = 0;
 
-    void solve(leetcode_538.TreeNode root){
+    void solve(TreeNode root){
         if(root==null){
             return;
         }

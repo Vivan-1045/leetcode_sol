@@ -1,3 +1,9 @@
+package Array.Diff_Array;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 class leetcode_3347 {
     public int maxFrequency(int[] nums, int k, int numOperations) {
         return maxFreq(nums,k,numOperations);
