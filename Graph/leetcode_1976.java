@@ -53,4 +53,68 @@ public class leetcode_1976 {
         return pathCount[n-1];
     }
 
+
+
+    //Another Way
+    class Pair{
+        long dis;
+        int node;
+        Pair(long a, int b){
+            this.dis=a;
+            this.node=b;
+        }
+    }
+
+    public int countPaths(int n, int[][] roads) {
+        return totalPath(n,roads);
+    }
+    int totalPath(int n, int [][] road){
+        int[] ways = new int[n];
+        ways[0]= 1;
+
+        long[] dist = new long[n];
+        Arrays.fill(dist,Long.MAX_VALUE);
+        dist[0] = 0;
+
+        List<List<Pair>> adj = new ArrayList<>();
+        for(int i = 0;i<n;i++){
+            adj.add(new ArrayList<>());
+        }
+        for(int []a : road){
+            int u = a[0];
+            int v = a[1];
+            adj.get(u).add(new Pair(a[2],v));
+            adj.get(v).add(new Pair(a[2],u));
+        }
+
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a,b) -> Long.compare(a.dis, b.dis));
+        pq.offer(new Pair(0,0));
+
+        while(!pq.isEmpty()){
+            long dis = pq.peek().dis;
+            int node = pq.peek().node;
+            pq.poll();
+
+            if(dist[node]<dis){
+                continue;
+            }
+
+            for(Pair pair : adj.get(node)){
+                int currNode = pair.node;
+                long currDis = pair.dis;
+
+                if(dist[currNode]> dis+currDis){
+                    dist[currNode] = dis + currDis;
+                    ways[currNode] = ways[node];
+                    pq.offer(new Pair(dis+currDis,currNode));
+                }
+                else if(dist[currNode]==dis+currDis){
+                    ways[currNode] = (ways[node]+ways[currNode])%MOD;
+                }
+            }
+        }
+
+        return ways[n-1];
+    }
+
 }
